@@ -1,35 +1,88 @@
-/* Make the body a flex container and stack items vertically */
+/* Body background and font */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure it takes full viewport height */
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light background */
+    color: #333; /* Dark text for contrast */
     margin: 0;
     padding: 0;
   }
   
-  /* Main container as a flexbox, with row layout for article and aside */
-  main {
-    display: flex;
-    flex-direction: row;
-    flex: auto; /* Allow main to take remaining space */
-  }
-  
-  /* Article should take 2/3 of the width */
-  article {
-    flex: 2;
-    overflow-y: auto; /* Enable vertical scroll */
-  }
-  
-  /* Aside should take 1/3 of the width */
-  aside {
-    flex: 1;
-    overflow-y: auto; /* Enable vertical scroll */
-  }
-  
-  /* Optional: Add some basic styling for other tags */
-  header, footer {
-    background-color: #f4f4f4;
+  /* Header */
+  header {
+    background-color: #4682b4; /* Steel blue */
+    color: white;
     padding: 1rem;
     text-align: center;
+    position: relative;
+  }
+  
+  /* Logo inside header */
+  header .logo {
+    font-size: 2rem; /* Make the logo bigger */
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #4682b4;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Styling the article and aside */
+  article {
+    padding: 1rem;
+    background-color: #ffffff; /* White background for article */
+    border-right: 2px solid #dcdcdc; /* Separate from aside */
+  }
+  
+  aside {
+    padding: 1rem;
+    background-color: #f9f9f9; /* Light gray for aside */
+  }
+  
+  /* Borders and hover effects for a polished look */
+  article, aside {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  article:hover, aside:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+  }
+  
+  /* Inside article customization */
+  article h1, article p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  
+  /* Links inside the article */
+  article a {
+    color: #4682b4;
+    text-decoration: none;
+  }
+  
+  article a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Custom scrollbars */
+  article::-webkit-scrollbar, aside::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  article::-webkit-scrollbar-thumb, aside::-webkit-scrollbar-thumb {
+    background-color: #4682b4;
+    border-radius: 4px;
+  }
+  
+  /* Optional: Adjust article layout further with internal flexbox */
+  article {
+    display: flex;
+    flex-direction: column;
   }
   
